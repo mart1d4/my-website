@@ -1,0 +1,403 @@
+.heading {
+    width: 100%;
+    min-height: 626px;
+    background-color: var(--accent-2);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.appButton {
+    flex: 0 0 auto;
+    width: 124px;
+    text-align: end;
+    display: flex;
+    flex-flow: row-reverse;
+}
+
+.hero {
+    width: 100%;
+    max-width: 1260px;
+    display: grid;
+    padding: var(--padding);
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.hero > div {
+    grid-column: span 4;
+}
+
+.heroText {
+    color: var(--foreground-1);
+}
+
+.heroText > h1 {
+    font-family: 'Ginto Nord', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial,
+        sans-serif;
+    font-size: clamp(24px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 95%;
+    text-transform: uppercase;
+    text-rendering: geometricPrecision;
+    user-select: text;
+    cursor: initial;
+}
+
+.heroText > div {
+    margin-top: 24px;
+    font-size: clamp(16px, 2vw, 20px);
+    line-height: 1.625;
+    font-weight: 300;
+}
+
+.heroButtons {
+    display: flex;
+    align-self: center;
+    flex-wrap: wrap;
+}
+
+.heroButtons > a {
+    margin-top: 24px;
+    border-radius: 28px;
+    font-size: 20px;
+    padding: 16px 32px;
+    background-color: var(--background-2);
+    color: var(--foreground-1);
+    text-decoration: none;
+    line-height: 24px;
+    cursor: pointer;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.heroButtons > a:first-child {
+    margin-right: 24px;
+    background-color: var(--foreground-1);
+    color: var(--background-1);
+}
+
+.heroButtons > a:first-child:hover {
+    color: var(--accent-2);
+    box-shadow: 0 8px 15px hsla(0, 0%, 0%, 0.2);
+}
+
+.heroButtons > a:last-child:hover {
+    background-color: var(--background-3);
+    box-shadow: 0 8px 15px hsla(0, 0%, 0%, 0.2);
+}
+
+.heroButtons > a:first-child > svg {
+    margin-right: 8px;
+}
+
+.contentGrid {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--background-1);
+}
+
+.contentGrid:nth-child(2),
+.contentGrid:nth-child(4),
+.contentGrid:nth-child(5) {
+    background-color: var(--background-2);
+}
+
+.contentGrid > div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    padding: var(--padding);
+    gap: 0 20px;
+    max-width: 1260px;
+}
+
+.contentGrid > div > img {
+    margin-top: auto;
+    margin-bottom: auto;
+    max-width: 678px;
+    max-height: 440px;
+    width: 100%;
+    object-fit: contain;
+    grid-column: span 4;
+    margin-top: 24px;
+}
+
+.contentGrid > div > div {
+    grid-column: span 4;
+    margin-top: 20px;
+    color: var(--foreground-1);
+}
+
+.contentGrid:nth-child(4) > div > div > h2 {
+    font-size: clamp(20px, 4vw, 40px);
+    font-family: 'Ginto Nord', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial,
+        sans-serif;
+    font-weight: 800;
+    line-height: 95%;
+    text-transform: uppercase;
+    text-rendering: geometricPrecision;
+}
+
+.contentGrid:nth-child(4) > div > div {
+    margin-top: 0;
+}
+
+.contentGrid:nth-child(4) > div > img {
+    margin-top: 24px;
+    max-width: none;
+    max-height: none;
+}
+
+.contentGrid:nth-child(5) > div {
+    width: 100%;
+    padding: 0 24px;
+    margin-bottom: 56px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.contentGrid:nth-child(5) > div > div {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin-top: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.contentGrid:nth-child(5) > div > div > img {
+    height: 49px;
+    width: auto;
+    user-select: none;
+}
+
+.contentGrid:nth-child(5) > div > h4 {
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    color: var(--foreground-1);
+    user-select: text;
+    cursor: initial;
+}
+
+.contentGrid:nth-child(5) > div > a {
+    width: 100%;
+    margin-top: 40px;
+    justify-content: center;
+    border-radius: 28px;
+    font-size: 20px;
+    padding: 16px 32px;
+    background-color: var(--accent-2);
+    color: var(--background-1);
+    line-height: 24px;
+    cursor: pointer;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+.contentGrid:nth-child(5) > div > a:hover {
+    background-color: var(--accent-1);
+    box-shadow: 0 8px 15px hsla(0, 0%, 0%, 0.2);
+}
+
+.contentGrid:nth-child(5) > div > a > svg {
+    margin-right: 8px;
+}
+
+.contentGrid > div > div > h2 {
+    font-size: clamp(20px, 4vw, 40px);
+    line-height: 120%;
+    font-weight: 800;
+    user-select: text;
+    cursor: initial;
+}
+
+.contentGrid > div > div > div {
+    margin-top: 24px;
+    font-size: clamp(16px, 2vw, 20px);
+    line-height: 1.625;
+}
+
+@media screen and (min-width: 768px) {
+    .heading {
+        padding-bottom: 80px;
+        min-height: 626px;
+    }
+
+    .hero > div {
+        grid-column: span 5;
+    }
+
+    .heroText {
+        margin-bottom: 8px;
+    }
+
+    .heroText > h1 {
+        font-size: 56px;
+    }
+
+    .heroText > div {
+        margin-top: 40px;
+    }
+
+    .heroButtons {
+        justify-content: left;
+    }
+
+    .imageBackground {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .imageBackground > img:first-child {
+        display: block;
+        margin-left: -1320px;
+    }
+
+    .imageBackground > img:nth-child(2) {
+        display: none;
+    }
+
+    .imageBackground > img:last-child {
+        display: block;
+        margin-left: -70px;
+    }
+
+    .contentGrid > div > img {
+        grid-column: span 4;
+        margin-top: auto;
+    }
+
+    .contentGrid > div > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        grid-column: span 4;
+        margin-top: 0;
+    }
+
+    .contentGrid > div > div > h2 {
+        font-size: 48px;
+    }
+
+    .contentGrid:nth-child(2) > div > div {
+        order: 1;
+    }
+
+    .contentGrid:nth-child(2) > div > img {
+        order: 2;
+    }
+
+    .contentGrid:nth-child(4) > div {
+        padding-bottom: 80px;
+    }
+
+    .contentGrid:nth-child(4) > div > div {
+        grid-column: span 8;
+        text-align: center;
+    }
+
+    .contentGrid:nth-child(4) > div > img {
+        margin-top: 24px;
+        grid-column: span 8;
+    }
+
+    .contentGrid:nth-child(5) > div {
+        margin-bottom: 80px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .contentGrid:nth-child(5) > div > a {
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .heading {
+        padding-bottom: 0;
+        min-height: 626px;
+    }
+
+    .hero > div {
+        grid-column: 3 / span 8;
+        text-align: center;
+    }
+
+    .heroButtons {
+        justify-content: center;
+    }
+
+    .imageBackground > img:first-child {
+        left: 50%;
+        margin-left: -1280px;
+    }
+
+    .imageBackground > img:nth-child(2) {
+        position: absolute;
+        display: block;
+        bottom: 0;
+        left: 50%;
+        height: auto;
+        width: auto;
+        max-width: none;
+        margin-left: -1030px;
+    }
+
+    .imageBackground > img:last-child {
+        margin-left: 370px;
+    }
+
+    .contentGrid > div > img {
+        grid-column: span 7;
+    }
+
+    .contentGrid > div > div {
+        grid-column: 9 / span 4;
+    }
+
+    .contentGrid:nth-child(2) > div > div {
+        grid-column: 1 / span 4;
+        order: 1;
+    }
+
+    .contentGrid:nth-child(2) > div > img {
+        grid-column: 6 / span 7;
+        order: 2;
+    }
+
+    .contentGrid:nth-child(4) > div > div {
+        grid-column: 2 / span 10;
+        text-align: center;
+    }
+
+    .contentGrid:nth-child(4) > div > img {
+        margin-top: 16px;
+        grid-column: span 12;
+    }
+
+    .contentGrid:nth-child(5) > div {
+        margin-bottom: 120px;
+    }
+}

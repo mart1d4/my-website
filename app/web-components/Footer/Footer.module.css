@@ -1,0 +1,234 @@
+.footer {
+    background-color: hsl(240, 23%, 9%);
+    padding-top: 80px;
+    padding-bottom: 64px;
+    color: hsl(226, 64%, 88%);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer > div {
+    width: 100%;
+    max-width: 1260px;
+    display: grid;
+    padding: 0 24px;
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    gap: 0 20px;
+}
+
+.infoBox {
+    grid-column: span 3;
+    grid-row-end: span 2;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 56px;
+    user-select: none;
+}
+
+.infoBox > h4 {
+    color: var(--accent-2);
+    font-family: 'Ginto Nord', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial,
+        sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 95%;
+    text-transform: uppercase;
+    text-rendering: geometricPrecision;
+    user-select: text;
+    cursor: initial;
+}
+
+.language {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.langChooser {
+    position: absolute;
+    z-index: 10;
+    bottom: 100%;
+    margin-bottom: 8px;
+    background-color: hsl(226, 64%, 88%);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.1);
+    background-color: var(--background-3);
+}
+
+.langChooser > div {
+    max-height: 320px;
+    min-width: 150px;
+    overflow: hidden auto;
+    overscroll-behavior: contain;
+}
+
+.langItem {
+    padding: 8px;
+    cursor: pointer;
+    color: hsl(226, 64%, 88%);
+}
+
+.langItem:hover {
+    border-radius: 4px;
+    background-color: var(--background-2);
+}
+
+.langItem > div {
+    display: flex;
+    align-items: center;
+}
+
+.langItem > div > img {
+    width: 24px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.langItem > div > div {
+    color: var(--foreground-1);
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.language > div {
+    position: relative;
+}
+
+.language > div > div {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.language > div > div > div:not(.langChooser > div) {
+    display: flex;
+    align-items: center;
+}
+
+.language > div > div > div > img {
+    width: 24px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.language > div > div > div > div {
+    color: hsl(226, 64%, 88%);
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.language > div > div > img {
+    padding-left: 8px;
+}
+
+.socials {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.socials > a {
+    display: flex;
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.socials > a:not(:first-child) {
+    margin-left: 24px;
+}
+
+.footer > div:first-child > div:nth-child(2) {
+    display: none;
+}
+
+.footerColumn {
+    grid-column: span 2;
+    margin-bottom: 40px;
+}
+
+.footerColumn > h5 {
+    color: var(--accent-2);
+    padding-top: 8px;
+    font-size: 16px;
+    line-height: 24px;
+    user-select: text;
+    cursor: initial;
+}
+
+.footerColumn > a {
+    color: inherit;
+    margin-top: 8px;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 24px;
+}
+
+.footerColumn > a:hover {
+    text-decoration: underline;
+}
+
+.footer > div:last-child > div {
+    grid-column: span 12;
+}
+
+.footerSeparator {
+    background-color: var(--accent-2);
+    height: 1px;
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.bottomFooterContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottomFooterContent > a:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.bottomFooterContent > a:last-child {
+    border-radius: 40px;
+    font-size: 14px;
+    padding: 7px 16px;
+    background-color: var(--accent-2);
+    color: hsl(240, 23%, 9%);
+    line-height: 24px;
+    cursor: pointer;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+.bottomFooterContent > a:last-child:hover {
+    background-color: var(--accent-1);
+    box-shadow: 0 8px 15px hsla(0, 0%, 0%, 0.2);
+}
+
+@media screen and (min-width: 768px) {
+    .footer > div:first-child > div:nth-child(2) {
+        display: block;
+        grid-column: span 1;
+        grid-row-end: span 2;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .footer > div:first-child > div:nth-child(2) {
+        display: block;
+        grid-column: span 1;
+        grid-row-end: span 2;
+    }
+}

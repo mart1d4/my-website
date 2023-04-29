@@ -1,0 +1,237 @@
+@font-face {
+    font-family: 'gg sans';
+    src: url('../public/fonts/ggsans/ggsans-Bold.eot');
+    src: local('gg sans Bold'), local('ggsans-Bold'),
+        url('../public/fonts/ggsans/ggsans-Bold.eot?#iefix')
+            format('embedded-opentype'),
+        url('../public/fonts/ggsans/ggsans-Bold.woff2') format('woff2'),
+        url('../public/fonts/ggsans/ggsans-Bold.woff') format('woff'),
+        url('../public/fonts/ggsans/ggsans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'gg sans';
+    src: url('../public/fonts/ggsans/ggsans-SemiboldItalic.eot');
+    src: local('gg sans SemiBold Italic'), local('ggsans-SemiboldItalic'),
+        url('../public/fonts/ggsans/ggsans-SemiboldItalic.eot?#iefix')
+            format('embedded-opentype'),
+        url('../public/fonts/ggsans/ggsans-SemiboldItalic.woff2')
+            format('woff2'),
+        url('../public/fonts/ggsans/ggsans-SemiboldItalic.woff') format('woff'),
+        url('../public/fonts/ggsans/ggsans-SemiboldItalic.ttf')
+            format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'gg sans';
+    src: url('../public/fonts/ggsans/ggsans-MediumItalic.eot');
+    src: local('gg sans Medium Italic'), local('ggsans-MediumItalic'),
+        url('../public/fonts/ggsans/ggsans-MediumItalic.eot?#iefix')
+            format('embedded-opentype'),
+        url('../public/fonts/ggsans/ggsans-MediumItalic.woff2') format('woff2'),
+        url('../public/fonts/ggsans/ggsans-MediumItalic.woff') format('woff'),
+        url('../public/fonts/ggsans/ggsans-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'gg sans';
+    src: url('../public/fonts/ggsans/ggsans-BoldItalic.eot');
+    src: local('gg sans Bold Italic'), local('ggsans-BoldItalic'),
+        url('../public/fonts/ggsans/ggsans-BoldItalic.eot?#iefix')
+            format('embedded-opentype'),
+        url('../public/fonts/ggsans/ggsans-BoldItalic.woff2') format('woff2'),
+        url('../public/fonts/ggsans/ggsans-BoldItalic.woff') format('woff'),
+        url('../public/fonts/ggsans/ggsans-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'gg sans';
+    src: url('../public/fonts/ggsans/ggsans-Semibold.eot');
+    src: local('gg sans SemiBold'), local('ggsans-Semibold'),
+        url('../public/fonts/ggsans/ggsans-Semibold.eot?#iefix')
+            format('embedded-opentype'),
+        url('../public/fonts/ggsans/ggsans-Semibold.woff2') format('woff2'),
+        url('../public/fonts/ggsans/ggsans-Semibold.woff') format('woff'),
+        url('../public/fonts/ggsans/ggsans-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'gg sans';
+    src: url('../public/fonts/ggsans/ggsans-Medium.eot');
+    src: local('gg sans Medium'), local('ggsans-Medium'),
+        url('../public/fonts/ggsans/ggsans-Medium.eot?#iefix')
+            format('embedded-opentype'),
+        url('../public/fonts/ggsans/ggsans-Medium.woff2') format('woff2'),
+        url('../public/fonts/ggsans/ggsans-Medium.woff') format('woff'),
+        url('../public/fonts/ggsans/ggsans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'gg sans';
+    src: url('../public/fonts/ggsans/ggsans-ExtraBold.eot');
+    src: local('gg sans ExtraBold'), local('ggsans-ExtraBold'),
+        url('../public/fonts/ggsans/ggsans-ExtraBold.eot?#iefix')
+            format('embedded-opentype'),
+        url('../public/fonts/ggsans/ggsans-ExtraBold.woff2') format('woff2'),
+        url('../public/fonts/ggsans/ggsans-ExtraBold.woff') format('woff'),
+        url('../public/fonts/ggsans/ggsans-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'gg sans';
+    src: url('../public/fonts/ggsans/ggsans-ExtraBoldItalic.eot');
+    src: local('gg sans ExtraBold Italic'), local('ggsans-ExtraBoldItalic'),
+        url('../public/fonts/ggsans/ggsans-ExtraBoldItalic.eot?#iefix')
+            format('embedded-opentype'),
+        url('../public/fonts/ggsans/ggsans-ExtraBoldItalic.woff2')
+            format('woff2'),
+        url('../public/fonts/ggsans/ggsans-ExtraBoldItalic.woff') format('woff'),
+        url('../public/fonts/ggsans/ggsans-ExtraBoldItalic.ttf')
+            format('truetype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'gg sans';
+    src: url('../public/fonts/ggsans/ggsans-Normal.eot');
+    src: local('gg sans Normal'), local('ggsans-Normal'),
+        url('../public/fonts/ggsans/ggsans-Normal.eot?#iefix')
+            format('embedded-opentype'),
+        url('../public/fonts/ggsans/ggsans-Normal.woff2') format('woff2'),
+        url('../public/fonts/ggsans/ggsans-Normal.woff') format('woff'),
+        url('../public/fonts/ggsans/ggsans-Normal.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'gg sans';
+    src: url('../public/fonts/ggsans/ggsans-NormalItalic.eot');
+    src: local('gg sans Normal Italic'), local('ggsans-NormalItalic'),
+        url('../public/fonts/ggsans/ggsans-NormalItalic.eot?#iefix')
+            format('embedded-opentype'),
+        url('../public/fonts/ggsans/ggsans-NormalItalic.woff2') format('woff2'),
+        url('../public/fonts/ggsans/ggsans-NormalItalic.woff') format('woff'),
+        url('../public/fonts/ggsans/ggsans-NormalItalic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'gg sans';
+    src: url('../public/fonts/ggsans/gg-sans-300.woff');
+    src: local('gg sans 300'), local('gg-sans-300'),
+        url('../public/fonts/ggsans/gg-sans-300.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ginto Nord';
+    src: url('../public/fonts/ginto/Ginto-Nord-700.woff');
+    src: local('Ginto Nord'), local('Ginto-Nord-700'),
+        url('../public/fonts/ginto/Ginto-Nord-700.woff2') format('woff2'),
+        url('../public/fonts/ginto/Ginto-Nord-700.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --background-1: hsla(0, 0%, 100%, 1);
+    --background-2: hsla(180, 20%, 84%, 1);
+    --background-3: hsla(180, 11%, 72%, 1);
+    --foreground-1: hsla(240, 6%, 7%, 1);
+    --foreground-2: hsla(240, 19%, 11%, 1);
+    --foreground-3: hsla(240, 5%, 15%, 1);
+    --accent-1: hsl(172, 39%, 65%);
+    --accent-2: hsl(222, 74%, 74%);
+    --accent-3: hsl(358, 66%, 76%);
+    --box-shadow-high: 0 0 10px rgba(0, 0, 0, 0.1);
+    --box-shadow-medium: 0 0 10px rgba(0, 0, 0, 0.075);
+    --box-shadow-low: 0 0 10px rgba(0, 0, 0, 0.05);
+    --border-heavy: 4px solid var(--foreground-3);
+    --border-medium: 2px solid var(--foreground-3);
+    --border-light: 1px solid var(--foreground-3);
+    --grid-columns: 4;
+    --padding: 56px 24px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-1: hsl(240, 23%, 9%);
+        --background-2: rgb(24, 24, 37);
+        --background-3: rgb(30, 30, 46);
+        --foreground-1: hsl(226, 64%, 88%);
+        --foreground-2: hsl(227, 35%, 80%);
+        --foreground-3: hsl(228, 24%, 72%);
+        --accent-1: hsl(172, 39%, 65%);
+        --accent-2: hsl(231, 97%, 72%);
+        --accent-3: hsl(358, 66%, 76%);
+        --box-shadow-high: 0 0 10px rgba(0, 0, 0, 0.1);
+        --box-shadow-medium: 0 0 10px rgba(0, 0, 0, 0.075);
+        --box-shadow-low: 0 0 10px rgba(0, 0, 0, 0.05);
+        --border-heavy: 4px solid var(--foreground-3);
+        --border-medium: 2px solid var(--foreground-3);
+        --border-light: 1px solid var(--foreground-3);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    :root {
+        --padding: 80px 40px;
+        --grid-columns: 8;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+        --padding: 120px 40px;
+        --grid-columns: 12;
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+    text-size-adjust: 100%;
+    text-rendering: geometricPrecision;
+}
+
+html,
+body {
+    color-scheme: light dark;
+    width: 100%;
+    background-color: var(--background-1);
+    color: var(--foreground-1);
+    scroll-behavior: smooth;
+    font-family: 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}

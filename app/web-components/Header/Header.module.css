@@ -1,0 +1,87 @@
+.header {
+    width: 100%;
+    max-width: 1260px;
+    padding: 0 40px;
+}
+
+.header > nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    width: 124px;
+    color: var(--foreground-1);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navLinks {
+    display: block;
+    flex: 1 1 auto;
+    text-align: center;
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 600;
+}
+
+.navLink {
+    color: var(--foreground-1);
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.navLink:hover {
+    text-decoration: underline;
+}
+
+.appButton {
+    flex: 0 0 auto;
+    width: 124px;
+    text-align: end;
+    display: flex;
+    flex-flow: row-reverse;
+}
+
+.appButton > a {
+    white-space: nowrap;
+    border-radius: 40px;
+    font-size: 14px;
+    padding: 7px 16px;
+    background-color: var(--foreground-1);
+    color: var(--background-1);
+    line-height: 24px;
+    cursor: pointer;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.appButton > a:hover {
+    color: var(--accent-2);
+    box-shadow: 0 8px 15px hsla(0, 0%, 0%, 0.2);
+}
+
+.hero {
+    width: 100%;
+    max-width: 1260px;
+    padding: 120px 40px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+    .navLinks {
+        display: none;
+    }
+}
