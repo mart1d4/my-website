@@ -110,8 +110,9 @@ const ContactPopout = ({
                                     aria-autocomplete='list'
                                     contentEditable='plaintext-only'
                                     onInput={(e) => {
-                                        const text =
-                                            e.target.innerText.toString();
+                                        const input =
+                                            e.target as HTMLDivElement;
+                                        const text = input.innerText.toString();
                                         setMessage(text);
                                     }}
                                 />
