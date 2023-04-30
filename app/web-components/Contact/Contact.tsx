@@ -15,7 +15,7 @@ const ContactButton = ({ children }: { children: ReactNode }): ReactElement => {
     const [showPopout, setShowPopout] = useState(false);
 
     if (showPopout) {
-        if (document && document.body) {
+        if (document && document?.body) {
             document.body.style.overflow = 'hidden';
         }
 
@@ -30,7 +30,7 @@ const ContactButton = ({ children }: { children: ReactNode }): ReactElement => {
         );
     }
 
-    if (document && document.body) {
+    if (document && document?.body) {
         document.body.style.overflow = 'auto';
     }
 
