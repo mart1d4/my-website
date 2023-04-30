@@ -15,9 +15,9 @@ const ContactButton = ({ children }: { children: ReactNode }): ReactElement => {
     const [showPopout, setShowPopout] = useState(false);
 
     if (showPopout) {
-        if (document && document?.body) {
-            document.body.style.overflow = 'hidden';
-        }
+        // if (document && document?.body) {
+        //     document.body.style.overflow = 'hidden';
+        // }
 
         return (
             <>
@@ -30,9 +30,9 @@ const ContactButton = ({ children }: { children: ReactNode }): ReactElement => {
         );
     }
 
-    if (document && document?.body) {
-        document.body.style.overflow = 'auto';
-    }
+    // if (document && document?.body) {
+    //     document.body.style.overflow = 'auto';
+    // }
 
     return cloneElement(children as ReactElement, {
         onClick: () => setShowPopout(!showPopout),
