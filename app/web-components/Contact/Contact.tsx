@@ -108,7 +108,7 @@ const ContactPopout = ({
                                     autoCorrect='off'
                                     aria-multiline='true'
                                     aria-autocomplete='list'
-                                    contentEditable='plaintext-only'
+                                    contentEditable={'plaintext-only' as any}
                                     onInput={(e) => {
                                         const input =
                                             e.target as HTMLDivElement;
