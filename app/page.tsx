@@ -108,12 +108,13 @@ const HomePage = (): ReactElement => {
                         />
 
                         <div className={styles.contentP}>
-                            <h2>From few to a fandom</h2>
+                            <h2>Yes, it's not finished yet</h2>
 
                             <div>
-                                Get any community running with moderation tools
-                                and custom member access. Give members special
-                                powers, set up private channels, and more.
+                                I am still working on this website, so it's not
+                                finished yet. I'm planning to add a blog sooner
+                                or later. It is not my priority for now, but I
+                                will add it in the future.
                             </div>
                         </div>
                     </div>
@@ -154,7 +155,9 @@ const HomePage = (): ReactElement => {
                                 lot to learn, but I'm proud of what I've
                                 accomplished so far. All of my projects are open
                                 source, so feel free to check them out on my
-                                GitHub.
+                                GitHub. Oh no, where are they? I'm still working
+                                on this... You sure are a curious person, aren't
+                                you?
                             </div>
                         </div>
                     </div>
