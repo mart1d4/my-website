@@ -1,3 +1,4 @@
+import ContactButton from '../Contact/Contact';
 import styles from './Header.module.css';
 import { v4 as uuidv4 } from 'uuid';
 import Link from 'next/link';
@@ -11,7 +12,6 @@ const links: Link[] = [
     { name: 'Home', href: '#' },
     { name: 'Projects', href: '#projects' },
     { name: 'Myself', href: '#myself' },
-    { name: 'Contact', href: '#contact' },
     { name: 'Socials', href: '#socials' },
 ];
 
@@ -23,7 +23,10 @@ const Header = () => {
                     href='/'
                     className={styles.brand}
                 >
-                    mart1d4
+                    <img
+                        src='/assets/favicon.svg'
+                        alt='Website Icon'
+                    />
                 </Link>
 
                 <div className={styles.navLinks}>
@@ -39,7 +42,9 @@ const Header = () => {
                 </div>
 
                 <div className={styles.appButton}>
-                    <Link href={'#contact'}>Contact</Link>
+                    <ContactButton>
+                        <button>Contact</button>
+                    </ContactButton>
                 </div>
             </nav>
         </header>

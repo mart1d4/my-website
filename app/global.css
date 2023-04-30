@@ -226,6 +226,10 @@
     text-rendering: geometricPrecision;
 }
 
+*:active {
+    --webkit-tap-highlight-color: transparent;
+}
+
 html,
 body {
     color-scheme: light dark;

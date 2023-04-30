@@ -60,7 +60,9 @@
     flex-wrap: wrap;
 }
 
-.heroButtons > a {
+.heroButtons > a,
+.heroButtons > button {
+    border: none;
     margin-top: 24px;
     border-radius: 28px;
     font-size: 20px;
@@ -76,24 +78,24 @@
     transition: all 0.2s ease-in-out;
 }
 
-.heroButtons > a:first-child {
+.heroButtons > button {
     margin-right: 24px;
     background-color: var(--foreground-1);
     color: var(--background-1);
 }
 
-.heroButtons > a:first-child:hover {
+.heroButtons > button > svg {
+    margin-right: 8px;
+}
+
+.heroButtons > button:hover {
     color: var(--accent-2);
     box-shadow: 0 8px 15px hsla(0, 0%, 0%, 0.2);
 }
 
-.heroButtons > a:last-child:hover {
+.heroButtons > a:hover {
     background-color: var(--background-3);
     box-shadow: 0 8px 15px hsla(0, 0%, 0%, 0.2);
-}
-
-.heroButtons > a:first-child > svg {
-    margin-right: 8px;
 }
 
 .contentGrid {
@@ -106,7 +108,8 @@
 
 .contentGrid:nth-child(2),
 .contentGrid:nth-child(4),
-.contentGrid:nth-child(5) {
+.contentGrid:nth-child(6),
+.contentGrid:nth-child(7) {
     background-color: var(--background-2);
 }
 
@@ -130,13 +133,13 @@
     margin-top: 24px;
 }
 
-.contentGrid > div > div {
+.contentGrid > div > .contentP {
     grid-column: span 4;
     margin-top: 20px;
     color: var(--foreground-1);
 }
 
-.contentGrid:nth-child(4) > div > div > h2 {
+.contentGrid.workTogether > div > .contentP > h2 {
     font-size: clamp(20px, 4vw, 40px);
     font-family: 'Ginto Nord', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial,
         sans-serif;
@@ -146,17 +149,17 @@
     text-rendering: geometricPrecision;
 }
 
-.contentGrid:nth-child(4) > div > div {
+.contentGrid.workTogether > div > .contentP {
     margin-top: 0;
 }
 
-.contentGrid:nth-child(4) > div > img {
+.contentGrid.workTogether > div > img {
     margin-top: 24px;
     max-width: none;
     max-height: none;
 }
 
-.contentGrid:nth-child(5) > div {
+.contentGrid.firstStep > div {
     width: 100%;
     padding: 0 24px;
     margin-bottom: 56px;
@@ -168,7 +171,7 @@
     position: relative;
 }
 
-.contentGrid:nth-child(5) > div > div {
+.contentGrid.firstStep > div > .contentP {
     position: absolute;
     top: 0;
     width: 100%;
@@ -179,13 +182,7 @@
     pointer-events: none;
 }
 
-.contentGrid:nth-child(5) > div > div > img {
-    height: 49px;
-    width: auto;
-    user-select: none;
-}
-
-.contentGrid:nth-child(5) > div > h4 {
+.contentGrid.firstStep > div > h4 {
     margin-top: 30px;
     font-weight: 700;
     font-size: 32px;
@@ -195,7 +192,8 @@
     cursor: initial;
 }
 
-.contentGrid:nth-child(5) > div > a {
+.contentGrid.firstStep > div > button {
+    border: none;
     width: 100%;
     margin-top: 40px;
     justify-content: center;
@@ -208,21 +206,22 @@
     cursor: pointer;
     font-weight: 500;
     display: inline-flex;
+    gap: 10px;
     align-items: center;
     transition: all 0.2s ease-in-out;
     text-decoration: none;
 }
 
-.contentGrid:nth-child(5) > div > a:hover {
+.contentGrid.firstStep > div > button:hover {
     background-color: var(--accent-1);
     box-shadow: 0 8px 15px hsla(0, 0%, 0%, 0.2);
 }
 
-.contentGrid:nth-child(5) > div > a > svg {
+.contentGrid.firstStep > div > a > svg {
     margin-right: 8px;
 }
 
-.contentGrid > div > div > h2 {
+.contentGrid > div > .contentP > h2 {
     font-size: clamp(20px, 4vw, 40px);
     line-height: 120%;
     font-weight: 800;
@@ -230,7 +229,7 @@
     cursor: initial;
 }
 
-.contentGrid > div > div > div {
+.contentGrid > div > .contentP > div {
     margin-top: 24px;
     font-size: clamp(16px, 2vw, 20px);
     line-height: 1.625;
@@ -289,7 +288,7 @@
         margin-top: auto;
     }
 
-    .contentGrid > div > div {
+    .contentGrid > div > .contentP {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -297,11 +296,11 @@
         margin-top: 0;
     }
 
-    .contentGrid > div > div > h2 {
+    .contentGrid > div > .contentP > h2 {
         font-size: 48px;
     }
 
-    .contentGrid:nth-child(2) > div > div {
+    .contentGrid:nth-child(2) > div > .contentP {
         order: 1;
     }
 
@@ -309,27 +308,27 @@
         order: 2;
     }
 
-    .contentGrid:nth-child(4) > div {
+    .contentGrid.workTogether > div {
         padding-bottom: 80px;
     }
 
-    .contentGrid:nth-child(4) > div > div {
+    .contentGrid.workTogether > div > .contentP {
         grid-column: span 8;
         text-align: center;
     }
 
-    .contentGrid:nth-child(4) > div > img {
+    .contentGrid.workTogether > div > img {
         margin-top: 24px;
         grid-column: span 8;
     }
 
-    .contentGrid:nth-child(5) > div {
+    .contentGrid.firstStep > div {
         margin-bottom: 80px;
         padding-top: 0;
         padding-bottom: 0;
     }
 
-    .contentGrid:nth-child(5) > div > a {
+    .contentGrid.firstStep > div > button {
         width: auto;
     }
 }
@@ -373,11 +372,11 @@
         grid-column: span 7;
     }
 
-    .contentGrid > div > div {
+    .contentGrid > div > .contentP {
         grid-column: 9 / span 4;
     }
 
-    .contentGrid:nth-child(2) > div > div {
+    .contentGrid:nth-child(2) > div > .contentP {
         grid-column: 1 / span 4;
         order: 1;
     }
@@ -387,17 +386,17 @@
         order: 2;
     }
 
-    .contentGrid:nth-child(4) > div > div {
+    .contentGrid.workTogether > div > .contentP {
         grid-column: 2 / span 10;
         text-align: center;
     }
 
-    .contentGrid:nth-child(4) > div > img {
+    .contentGrid.workTogether > div > img {
         margin-top: 16px;
         grid-column: span 12;
     }
 
-    .contentGrid:nth-child(5) > div {
+    .contentGrid.firstStep > div {
         margin-bottom: 120px;
     }
 }

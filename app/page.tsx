@@ -1,3 +1,4 @@
+import ContactButton from './web-components/Contact/Contact';
 import Header from './web-components/Header/Header';
 import Footer from './web-components/Footer/Footer';
 import styles from './Home.module.css';
@@ -24,30 +25,32 @@ const HomePage = (): ReactElement => {
                         </div>
 
                         <div className={styles.heroButtons}>
-                            <Link href='/download'>
-                                <svg
-                                    xmlns='http://www.w3.org/2000/svg'
-                                    viewBox='0 0 24 24'
-                                    width={24}
-                                    height={24}
-                                    stroke-width='1.5'
-                                    stroke='currentColor'
-                                    fill='none'
-                                    stroke-linecap='round'
-                                    stroke-linejoin='round'
-                                >
-                                    <line
-                                        x1='10'
-                                        y1='14'
-                                        x2='21'
-                                        y2='3'
-                                    />
-                                    <path d='M21 3l-6.5 18a0.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a0.55 .55 0 0 1 0 -1l18 -6.5' />
-                                </svg>
-                                Contact me
-                            </Link>
+                            <ContactButton>
+                                <button>
+                                    <svg
+                                        xmlns='http://www.w3.org/2000/svg'
+                                        viewBox='0 0 24 24'
+                                        width={24}
+                                        height={24}
+                                        strokeWidth='1.5'
+                                        stroke='currentColor'
+                                        fill='none'
+                                        strokeLinecap='round'
+                                        strokeLinejoin='round'
+                                    >
+                                        <line
+                                            x1='10'
+                                            y1='14'
+                                            x2='21'
+                                            y2='3'
+                                        />
+                                        <path d='M21 3l-6.5 18a0.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a0.55 .55 0 0 1 0 -1l18 -6.5' />
+                                    </svg>
+                                    Contact me
+                                </button>
+                            </ContactButton>
 
-                            <Link href='/login'>View my work</Link>
+                            <Link href='#projects'>View my work</Link>
                         </div>
                     </div>
                 </div>
@@ -57,12 +60,12 @@ const HomePage = (): ReactElement => {
                 <div className={styles.contentGrid}>
                     <div>
                         <img
-                            src='/assets/homepage/programming.png'
+                            src='/assets/homepage/programming-bg.png'
                             alt=''
                         />
 
-                        <div>
-                            <h2>The skills you need</h2>
+                        <div className={styles.contentP}>
+                            <h2>The skills that you need</h2>
 
                             <div>
                                 I am proficient in several programming languages
@@ -79,12 +82,12 @@ const HomePage = (): ReactElement => {
                 <div className={styles.contentGrid}>
                     <div>
                         <img
-                            src='/assets/homepage/learning.png'
+                            src='/assets/homepage/learning-bg.png'
                             alt=''
                         />
 
-                        <div>
-                            <h2>An education that's worth your time</h2>
+                        <div className={styles.contentP}>
+                            <h2>An education that shaped my skills</h2>
 
                             <div>
                                 I am currently pursuing a bachelor's degree in
@@ -100,11 +103,11 @@ const HomePage = (): ReactElement => {
                 <div className={styles.contentGrid}>
                     <div>
                         <img
-                            src='/assets/homepage/code.png'
+                            src='/assets/homepage/code-bg.png'
                             alt=''
                         />
 
-                        <div>
+                        <div className={styles.contentP}>
                             <h2>From few to a fandom</h2>
 
                             <div>
@@ -118,8 +121,49 @@ const HomePage = (): ReactElement => {
 
                 <div className={styles.contentGrid}>
                     <div>
-                        <div>
-                            <h2>Reliable tech for staying close</h2>
+                        <div className={styles.contentP}>
+                            <h2>Myself</h2>
+
+                            <div>
+                                I'm a student at a French University, studying
+                                computer science. I have a strong passion for
+                                programming, and I've been actively learning and
+                                working on various projects in my free time.
+                                <br />
+                                <br />
+                                I'm a very curious person, I love to learn new
+                                things and I'm always looking for new
+                                challenges. I'm a fast learner and I'm not
+                                afraid to dive into new things.
+                                <br />
+                                <br />I also love to play video games, I'm a big
+                                fan of the Call of Duty franchise, and I also
+                                love to play GTA V, Minecraft, and many more.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className={styles.contentGrid}>
+                    <div>
+                        <div className={styles.contentP}>
+                            <h2>The Projects I've made</h2>
+
+                            <div>
+                                Here are the projects I've made. I still have a
+                                lot to learn, but I'm proud of what I've
+                                accomplished so far. All of my projects are open
+                                source, so feel free to check them out on my
+                                GitHub.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className={styles.contentGrid + ' ' + styles.workTogether}>
+                    <div>
+                        <div className={styles.contentP}>
+                            <h2>Let's Work Together</h2>
 
                             <div>
                                 I am excited to continue learning and growing as
@@ -131,38 +175,40 @@ const HomePage = (): ReactElement => {
                         </div>
 
                         <img
-                            src='/assets/homepage/software.png'
+                            src='/assets/homepage/software-bg.png'
                             alt='Stylized image showing friends video talking with each other on desktop and mobile.'
                         />
                     </div>
                 </div>
 
-                <div className={styles.contentGrid}>
+                <div className={styles.contentGrid + ' ' + styles.firstStep}>
                     <div>
                         <h4>Ready to take the first step?</h4>
 
-                        <a href=''>
-                            <svg
-                                xmlns='http://www.w3.org/2000/svg'
-                                viewBox='0 0 24 24'
-                                width={24}
-                                height={24}
-                                stroke-width='1.5'
-                                stroke='currentColor'
-                                fill='none'
-                                stroke-linecap='round'
-                                stroke-linejoin='round'
-                            >
-                                <line
-                                    x1='10'
-                                    y1='14'
-                                    x2='21'
-                                    y2='3'
-                                />
-                                <path d='M21 3l-6.5 18a0.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a0.55 .55 0 0 1 0 -1l18 -6.5' />
-                            </svg>
-                            Send me a message
-                        </a>
+                        <ContactButton>
+                            <button>
+                                <svg
+                                    xmlns='http://www.w3.org/2000/svg'
+                                    viewBox='0 0 24 24'
+                                    width={24}
+                                    height={24}
+                                    strokeWidth='1.5'
+                                    stroke='currentColor'
+                                    fill='none'
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                >
+                                    <line
+                                        x1='10'
+                                        y1='14'
+                                        x2='21'
+                                        y2='3'
+                                    />
+                                    <path d='M21 3l-6.5 18a0.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a0.55 .55 0 0 1 0 -1l18 -6.5' />
+                                </svg>
+                                Send me a message
+                            </button>
+                        </ContactButton>
                     </div>
                 </div>
             </div>

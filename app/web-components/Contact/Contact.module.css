@@ -1,0 +1,205 @@
+#wrapper {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsla(0, 0%, 0%, 0.85);
+    box-shadow: 0 8px 15px hsla(0, 0%, 0%, 0.2);
+}
+
+#wrapper > div {
+    position: relative;
+    max-width: 480px;
+    max-height: calc(100vh - 64px);
+    background-color: var(--background-3);
+    color: var(--foreground-1);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    animation: popIn 0.25s ease-in-out;
+    text-align: left;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 24px 16px;
+    user-select: none;
+    text-align: center;
+}
+
+.header > h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 30px;
+    cursor: default;
+}
+
+.header > p {
+    color: var(--foreground-3);
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.header > button {
+    position: absolute;
+    display: flex;
+    background-color: var(--background-3);
+    border: none;
+    top: 16px;
+    right: 16px;
+    padding: 4px;
+    opacity: 0.5;
+    cursor: pointer;
+    color: var(--foreground-1);
+    transition: opacity 0.2s ease-in-out;
+}
+
+.header > button:hover {
+    opacity: 1;
+}
+
+#wrapper form {
+    overflow: hidden;
+}
+
+#wrapper form > div:first-child {
+    overflow: hidden scroll;
+    padding-right: 8px;
+    padding-bottom: 16px;
+    position: relative;
+    border-radius: 5px 5px 0 0;
+    padding-left: 16px;
+}
+
+#wrapper form > div:first-child::-webkit-scrollbar {
+    width: 8px;
+}
+
+#wrapper form > div:last-child {
+    position: relative;
+    padding: 16px;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    border-radius: 0 0 5px 5px;
+    box-shadow: inset 0 1px 0 hsla(220, 6.5%, 18%, 0.6);
+    background-color: var(--background-2);
+}
+
+.inputContainer > h2 {
+    color: var(--foreground-2);
+    margin-bottom: 8px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02rem;
+    user-select: none;
+}
+
+.inputContainer > div {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 3px;
+    background-color: var(--background-1);
+    border: none;
+    box-sizing: border-box;
+    max-height: 50vh;
+}
+
+.inputContainer > div > input,
+.inputContainer > div > div {
+    padding: 10px;
+    height: 40px;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 16px;
+    color: var(--foreground-3);
+    width: 100%;
+}
+
+.inputContainer > div > input::placeholder {
+    color: var(--foreground-3);
+    opacity: 0.35;
+}
+
+.inputContainer > div > div {
+    height: 100%;
+    overflow: hidden scroll;
+}
+
+.inputContainer > div > div::-webkit-scrollbar {
+    width: 2px;
+}
+
+.inputContainer:not(:first-child) {
+    margin-top: 16px;
+}
+
+.email {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+}
+
+.email > span {
+    user-select: none;
+    opacity: 0.5;
+}
+
+.email > a {
+    color: var(--accent-2);
+    display: inline-block;
+    margin-left: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.email > a:hover {
+    text-decoration: underline;
+}
+
+.button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 96px;
+    height: 38px;
+    background: none;
+    color: var(--foreground-1);
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    user-select: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.button:first-child {
+    background-color: var(--accent-2);
+    margin-left: 8px;
+}
+
+.button:first-child:hover {
+    background-color: var(--accent-1);
+}

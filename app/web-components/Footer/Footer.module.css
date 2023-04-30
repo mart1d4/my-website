@@ -189,7 +189,7 @@
     justify-content: space-between;
 }
 
-.bottomFooterContent > a:first-child {
+.bottomFooterContent > a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -197,7 +197,8 @@
     text-decoration: none;
 }
 
-.bottomFooterContent > a:last-child {
+.bottomFooterContent > button {
+    border: none;
     border-radius: 40px;
     font-size: 14px;
     padding: 7px 16px;
@@ -212,7 +213,7 @@
     text-decoration: none;
 }
 
-.bottomFooterContent > a:last-child:hover {
+.bottomFooterContent > button:hover {
     background-color: var(--accent-1);
     box-shadow: 0 8px 15px hsla(0, 0%, 0%, 0.2);
 }
