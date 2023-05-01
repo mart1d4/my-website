@@ -2,7 +2,6 @@ import ContactButton from '../Contact/Contact';
 import styles from './Footer.module.css';
 import { v4 as uuidv4 } from 'uuid';
 import Language from './Language';
-import Link from 'next/link';
 
 type Route = {
     title: string;
@@ -16,9 +15,9 @@ const routes: Route[] = [
     {
         title: 'Site Map',
         children: [
-            { name: 'Home', link: '/' },
-            { name: 'Projects', link: '#' },
+            { name: 'Home', link: '#home' },
             { name: 'Myself', link: '#myself' },
+            { name: 'Projects', link: '#projects' },
             { name: 'Socials', link: '#socials' },
         ],
     },
@@ -135,20 +134,14 @@ const Footer = () => {
                         className={styles.footerColumn}
                     >
                         <h5>{route.title}</h5>
-                        {route.children.map((child) => {
-                            if (route.title === 'Site Map') {
-                                return (
-                                    <Link
-                                        href={child.link}
-                                        key={uuidv4()}
-                                    >
-                                        {child.name}
-                                    </Link>
-                                );
-                            } else {
-                                return <a href={child.link}>{child.name}</a>;
-                            }
-                        })}
+                        {route.children.map((child) => (
+                            <a
+                                key={uuidv4()}
+                                href={child.link}
+                            >
+                                {child.name}
+                            </a>
+                        ))}
                     </div>
                 ))}
             </div>
@@ -158,12 +151,24 @@ const Footer = () => {
                     <div className={styles.footerSeparator} />
 
                     <div className={styles.bottomFooterContent}>
-                        <Link href='/'>
-                            <img
-                                src='/assets/favicon.svg'
-                                alt='Website Icon'
-                            />
-                        </Link>
+                        <a href='/'>
+                            <svg
+                                xmlns='http://www.w3.org/2000/svg'
+                                width='58'
+                                height='58'
+                                viewBox='0 0 24 24'
+                                strokeWidth='1.5'
+                                stroke='hsl(227, 70%, 87%)'
+                                fill='none'
+                                strokeLinecap='round'
+                                strokeLinejoin='round'
+                            >
+                                <path d='M5 11h14v-3h-14z' />
+                                <path d='M17.5 11l-1.5 10h-8l-1.5 -10' />
+                                <path d='M6 8v-1a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v1' />
+                                <path d='M15 5v-2' />
+                            </svg>
+                        </a>
 
                         <ContactButton>
                             <button>Contact</button>

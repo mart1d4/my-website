@@ -5,6 +5,74 @@ import styles from './Home.module.css';
 import { ReactElement } from 'react';
 import Link from 'next/link';
 
+const projects = [
+    {
+        title: 'Project 1',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
+    },
+    {
+        title: 'Project 2',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
+    },
+    {
+        title: 'Project 2',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
+    },
+    {
+        title: 'Project 2',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
+    },
+    {
+        title: 'Project 2',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
+    },
+    {
+        title: 'Project 2',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
+    },
+    {
+        title: 'Project 2',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
+    },
+    {
+        title: 'Project 2',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
+    },
+    {
+        title: 'Project 2',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
+    },
+    {
+        title: 'Project 2',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
+    },
+    {
+        title: 'Project 2',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
+    },
+    {
+        title: 'Project 2',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
+    },
+    {
+        title: 'Project 2',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
+    },
+];
+
 const HomePage = (): ReactElement => {
     return (
         <div className={styles.mainContainer}>
@@ -120,8 +188,56 @@ const HomePage = (): ReactElement => {
                     </div>
                 </div>
 
-                <div className={styles.contentGrid}>
+                <div
+                    className={styles.contentGrid + ' ' + styles.projects}
+                    id='projects'
+                >
                     <div>
+                        <div className={styles.contentP}>
+                            <h2>The Projects I've made</h2>
+
+                            <div>
+                                Here are the projects I've made. I still have a
+                                lot to learn, but I'm proud of what I've
+                                accomplished so far. All of my projects are open
+                                source, so feel free to check them out on my
+                                GitHub. Oh no, where are they? I'm still working
+                                on this... You sure are a curious person, aren't
+                                you?
+                            </div>
+                        </div>
+
+                        <div className={styles.projectsCards}>
+                            {projects.map((project, index) => (
+                                <div
+                                    key={index}
+                                    className={styles.card}
+                                >
+                                    <h3>{project?.title}</h3>
+                                    <p>{project?.description}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    className={styles.contentGrid + ' ' + styles.myself}
+                    id='myself'
+                >
+                    <div>
+                        <div>
+                            <h2>
+                                My curriculum vitae is available{' '}
+                                <a
+                                    href='/assets/cv.pdf'
+                                    download
+                                >
+                                    here
+                                </a>
+                            </h2>
+                        </div>
+
                         <div className={styles.contentP}>
                             <h2>Myself</h2>
 
@@ -140,24 +256,6 @@ const HomePage = (): ReactElement => {
                                 <br />I also love to play video games, I'm a big
                                 fan of the Call of Duty franchise, and I also
                                 love to play GTA V, Minecraft, and many more.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className={styles.contentGrid}>
-                    <div>
-                        <div className={styles.contentP}>
-                            <h2>The Projects I've made</h2>
-
-                            <div>
-                                Here are the projects I've made. I still have a
-                                lot to learn, but I'm proud of what I've
-                                accomplished so far. All of my projects are open
-                                source, so feel free to check them out on my
-                                GitHub. Oh no, where are they? I'm still working
-                                on this... You sure are a curious person, aren't
-                                you?
                             </div>
                         </div>
                     </div>

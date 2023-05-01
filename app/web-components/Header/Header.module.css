@@ -15,8 +15,7 @@
 .brand {
     display: flex;
     align-items: center;
-    width: 124px;
-    color: var(--foreground-1);
+    margin-right: 66px;
     text-decoration: none;
     font-weight: bold;
 }
@@ -31,7 +30,7 @@
 }
 
 .navLink {
-    color: var(--foreground-1);
+    color: hsl(229, 19%, 23%);
     margin: 10px;
     padding: 10px;
     cursor: pointer;
@@ -56,8 +55,8 @@
     border-radius: 40px;
     font-size: 14px;
     padding: 7px 16px;
-    background-color: var(--foreground-1);
-    color: var(--background-1);
+    background-color: hsl(229, 19%, 23%);
+    color: hsl(220, 21%, 89%);
     line-height: 24px;
     cursor: pointer;
     font-weight: 500;
@@ -69,7 +68,7 @@
 
 .appButton > button:hover {
     color: var(--accent-2);
-    box-shadow: 0 8px 15px hsla(0, 0%, 0%, 0.2);
+    box-shadow: var(--box-shadow-medium);
 }
 
 .hero {
@@ -82,6 +81,18 @@
 }
 
 @media (max-width: 1024px) {
+    .navLinks {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        width: 100%;
+        max-width: 1260px;
+        padding: 0 24px;
+    }
+
     .navLinks {
         display: none;
     }

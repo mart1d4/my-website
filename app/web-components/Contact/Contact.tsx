@@ -8,17 +8,26 @@ import {
     Dispatch,
     SetStateAction,
     useRef,
+    useEffect,
 } from 'react';
 import styles from './Contact.module.css';
 
-const ContactButton = ({ children }: { children: ReactNode }): ReactElement => {
+export const ContactButton = ({
+    children,
+}: {
+    children: ReactNode;
+}): ReactElement => {
     const [showPopout, setShowPopout] = useState(false);
 
-    if (showPopout) {
-        // if (document && document?.body) {
-        //     document.body.style.overflow = 'hidden';
-        // }
+    useEffect(() => {
+        if (showPopout) {
+            document.documentElement.style.overflow = 'hidden';
+        } else {
+            document.documentElement.style.overflow = 'auto';
+        }
+    }, [showPopout]);
 
+    if (showPopout) {
         return (
             <>
                 {cloneElement(children as ReactElement, {
@@ -29,10 +38,6 @@ const ContactButton = ({ children }: { children: ReactNode }): ReactElement => {
             </>
         );
     }
-
-    // if (document && document?.body) {
-    //     document.body.style.overflow = 'auto';
-    // }
 
     return cloneElement(children as ReactElement, {
         onClick: () => setShowPopout(!showPopout),
@@ -64,7 +69,7 @@ const ContactPopout = ({
                     <h1>Contact me</h1>
                     <p>
                         Please leave your message as well as a way for me to
-                        answer you
+                        answer you (or none if you don't want a reply)
                     </p>
 
                     <button onClick={() => setShow((prev) => !prev)}>
@@ -81,7 +86,22 @@ const ContactPopout = ({
                     </button>
                 </div>
 
-                <form>
+                <form
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                        if (!message?.length) {
+                            alert('Please enter a message');
+                            return;
+                        }
+                        console.log(
+                            'Contact: ',
+                            contact,
+                            '\nMessage: ',
+                            message
+                        );
+                        setShow((prev) => !prev);
+                    }}
+                >
                     <div>
                         <div className={styles.inputContainer}>
                             <h2>How to contact you</h2>

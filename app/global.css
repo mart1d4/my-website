@@ -164,42 +164,44 @@
 }
 
 :root {
-    --background-1: hsla(0, 0%, 100%, 1);
-    --background-2: hsla(180, 20%, 84%, 1);
-    --background-3: hsla(180, 11%, 72%, 1);
-    --foreground-1: hsla(240, 6%, 7%, 1);
-    --foreground-2: hsla(240, 19%, 11%, 1);
-    --foreground-3: hsla(240, 5%, 15%, 1);
+    --background-1: hsl(220, 21%, 89%);
+    --background-2: hsl(220, 22%, 92%);
+    --background-3: hsl(220, 23%, 95%);
+    --foreground-1: hsl(234, 16%, 35%);
+    --foreground-2: hsl(233, 13%, 41%);
+    --foreground-3: hsl(233, 10%, 47%);
     --accent-1: hsl(172, 39%, 65%);
     --accent-2: hsl(222, 74%, 74%);
     --accent-3: hsl(358, 66%, 76%);
-    --box-shadow-high: 0 0 10px rgba(0, 0, 0, 0.1);
-    --box-shadow-medium: 0 0 10px rgba(0, 0, 0, 0.075);
-    --box-shadow-low: 0 0 10px rgba(0, 0, 0, 0.05);
+    --box-shadow-high: 0 8px 16px hsla(0, 0%, 0%, 0.24);
+    --box-shadow-medium: 0 8px 15px hsla(0, 0%, 0%, 0.2);
+    --box-shadow-low: 0 1px 1px hsla(0, 0%, 0%, 0.1);
     --border-heavy: 4px solid var(--foreground-3);
     --border-medium: 2px solid var(--foreground-3);
-    --border-light: 1px solid var(--foreground-3);
+    --border-light: inset 0 1px 0 hsla(220, 6.5%, 18%, 0.6);
     --grid-columns: 4;
     --padding: 56px 24px;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background-1: hsl(240, 23%, 9%);
-        --background-2: rgb(24, 24, 37);
-        --background-3: rgb(30, 30, 46);
-        --foreground-1: hsl(226, 64%, 88%);
-        --foreground-2: hsl(227, 35%, 80%);
-        --foreground-3: hsl(228, 24%, 72%);
+        --background-1: hsl(229, 20%, 17%);
+        --background-2: hsl(231, 19%, 20%);
+        --background-3: hsl(229, 19%, 23%);
+        --foreground-1: hsl(227, 70%, 87%);
+        --foreground-2: hsl(227, 44%, 80%);
+        --foreground-3: hsl(228, 29%, 73%);
         --accent-1: hsl(172, 39%, 65%);
-        --accent-2: hsl(231, 97%, 72%);
+        --accent-2: hsl(222, 74%, 74%);
         --accent-3: hsl(358, 66%, 76%);
-        --box-shadow-high: 0 0 10px rgba(0, 0, 0, 0.1);
-        --box-shadow-medium: 0 0 10px rgba(0, 0, 0, 0.075);
-        --box-shadow-low: 0 0 10px rgba(0, 0, 0, 0.05);
+        --box-shadow-high: 0 8px 16px hsla(0, 0%, 0%, 0.24);
+        --box-shadow-medium: 0 8px 15px hsla(0, 0%, 0%, 0.2);
+        --box-shadow-low: 0 1px 1px hsla(0, 0%, 0%, 0.1);
         --border-heavy: 4px solid var(--foreground-3);
         --border-medium: 2px solid var(--foreground-3);
-        --border-light: 1px solid var(--foreground-3);
+        --border-light: inset 0 1px 0 hsla(220, 6.5%, 18%, 0.6);
+        --grid-columns: 4;
+        --padding: 56px 24px;
     }
 }
 
@@ -226,14 +228,15 @@
     text-rendering: geometricPrecision;
 }
 
-*:active {
+*:active,
+*:focus {
     --webkit-tap-highlight-color: transparent;
 }
 
 html,
 body {
     color-scheme: light dark;
-    width: 100%;
+    overflow-x: hidden;
     background-color: var(--background-1);
     color: var(--foreground-1);
     scroll-behavior: smooth;

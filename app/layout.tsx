@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     icons: {
         icon: '/assets/favicon.svg',
     },
+    viewport: 'width=device-width, initial-scale=1.0',
 };
 
 const RootLayout = ({ children }: { children: ReactNode }): ReactElement => {
