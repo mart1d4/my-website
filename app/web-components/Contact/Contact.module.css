@@ -118,7 +118,7 @@
     background-color: var(--background-1);
     border: none;
     box-sizing: border-box;
-    max-height: 50vh;
+    max-height: 40vh;
 }
 
 .inputContainer > div > input,

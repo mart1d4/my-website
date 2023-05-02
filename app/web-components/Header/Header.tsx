@@ -10,8 +10,8 @@ type Link = {
 
 const links: Link[] = [
     { name: 'Home', href: '#home' },
-    { name: 'Myself', href: '#myself' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Myself', href: '#myself' },
     { name: 'Socials', href: '#socials' },
 ];
 

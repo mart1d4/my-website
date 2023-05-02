@@ -3,7 +3,6 @@ import Header from './web-components/Header/Header';
 import Footer from './web-components/Footer/Footer';
 import styles from './Home.module.css';
 import { ReactElement } from 'react';
-import Link from 'next/link';
 
 const projects = [
     {
@@ -84,11 +83,11 @@ const HomePage = (): ReactElement => {
                         <div className={styles.heroText}>
                             <h1>MAKE THE FUTURE</h1>
                             <div>
-                                My name is Martin, and I'm a student at a French
-                                University, studying computer science. I have a
-                                strong passion for programming, and I've been
-                                actively learning and working on various
-                                projects in my free time.
+                                My name is Martin, and I'm studying computer
+                                science at a French University. I have a strong
+                                passion for programming, and I've been actively
+                                learning and working on various projects in my
+                                free time.
                             </div>
                         </div>
 
@@ -118,7 +117,7 @@ const HomePage = (): ReactElement => {
                                 </button>
                             </ContactButton>
 
-                            <Link href='#projects'>View my work</Link>
+                            <a href='#projects'>View my work</a>
                         </div>
                     </div>
                 </div>

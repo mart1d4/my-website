@@ -16,8 +16,8 @@ const routes: Route[] = [
         title: 'Site Map',
         children: [
             { name: 'Home', link: '#home' },
-            { name: 'Myself', link: '#myself' },
             { name: 'Projects', link: '#projects' },
+            { name: 'Myself', link: '#myself' },
             { name: 'Socials', link: '#socials' },
         ],
     },
