@@ -152,7 +152,7 @@
 
 .footerColumn > h5 {
     color: var(--accent-2);
-    padding-top: 8px;
+    margin-bottom: 20px;
     font-size: 16px;
     line-height: 24px;
     user-select: text;

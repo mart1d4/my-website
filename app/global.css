@@ -105,7 +105,8 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'gg sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial,
+        sans-serif;
     box-sizing: border-box;
     text-size-adjust: 100%;
     text-rendering: geometricPrecision;

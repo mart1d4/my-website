@@ -1,76 +1,11 @@
+// @ts-nocheck
+
 import ContactButton from './web-components/Contact/Contact';
+import Projects from './web-components/Projects/Projects';
 import Header from './web-components/Header/Header';
 import Footer from './web-components/Footer/Footer';
 import styles from './Home.module.css';
 import { ReactElement } from 'react';
-
-const projects = [
-    {
-        title: 'Project 1',
-        description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
-    },
-    {
-        title: 'Project 2',
-        description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
-    },
-    {
-        title: 'Project 2',
-        description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
-    },
-    {
-        title: 'Project 2',
-        description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
-    },
-    {
-        title: 'Project 2',
-        description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
-    },
-    {
-        title: 'Project 2',
-        description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
-    },
-    {
-        title: 'Project 2',
-        description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
-    },
-    {
-        title: 'Project 2',
-        description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
-    },
-    {
-        title: 'Project 2',
-        description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
-    },
-    {
-        title: 'Project 2',
-        description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
-    },
-    {
-        title: 'Project 2',
-        description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
-    },
-    {
-        title: 'Project 2',
-        description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
-    },
-    {
-        title: 'Project 2',
-        description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget ultricies.',
-    },
-];
 
 const HomePage = (): ReactElement => {
     return (
@@ -127,7 +62,7 @@ const HomePage = (): ReactElement => {
                 <div className={styles.contentGrid}>
                     <div>
                         <img
-                            src='/assets/homepage/programming-bg.png'
+                            src='/assets/homepage/programming.svg'
                             alt=''
                         />
 
@@ -149,12 +84,12 @@ const HomePage = (): ReactElement => {
                 <div className={styles.contentGrid}>
                     <div>
                         <img
-                            src='/assets/homepage/learning-bg.png'
+                            src='/assets/homepage/learning.svg'
                             alt=''
                         />
 
                         <div className={styles.contentP}>
-                            <h2>An education that shaped my skills</h2>
+                            <h2>A thorough education</h2>
 
                             <div>
                                 I am currently pursuing a bachelor's degree in
@@ -170,7 +105,7 @@ const HomePage = (): ReactElement => {
                 <div className={styles.contentGrid}>
                     <div>
                         <img
-                            src='/assets/homepage/code-bg.png'
+                            src='/assets/homepage/skills.svg'
                             alt=''
                         />
 
@@ -196,27 +131,14 @@ const HomePage = (): ReactElement => {
                             <h2>The Projects I've made</h2>
 
                             <div>
-                                Here are the projects I've made. I still have a
-                                lot to learn, but I'm proud of what I've
-                                accomplished so far. All of my projects are open
-                                source, so feel free to check them out on my
-                                GitHub. Oh no, where are they? I'm still working
-                                on this... You sure are a curious person, aren't
-                                you?
+                                Here are the projects I've made. All of them are
+                                open source, so feel free to check them out on
+                                my GitHub. Others are coming soon, so stay tuned
+                                for more.
                             </div>
                         </div>
 
-                        <div className={styles.projectsCards}>
-                            {projects.map((project, index) => (
-                                <div
-                                    key={index}
-                                    className={styles.card}
-                                >
-                                    <h3>{project?.title}</h3>
-                                    <p>{project?.description}</p>
-                                </div>
-                            ))}
-                        </div>
+                        <Projects />
                     </div>
                 </div>
 
@@ -235,26 +157,29 @@ const HomePage = (): ReactElement => {
                                     here
                                 </a>
                             </h2>
+
+                            <p>
+                                Joking, I don't have a CV yet. I'm still
+                                studying, so I don't have much to put on it. But
+                                I'm working on it, so it will be available soon.
+                            </p>
                         </div>
 
                         <div className={styles.contentP}>
                             <h2>Myself</h2>
 
                             <div>
-                                I'm a student at a French University, studying
-                                computer science. I have a strong passion for
-                                programming, and I've been actively learning and
-                                working on various projects in my free time.
+                                I am me, and I am proud of it. I am a
+                                self-motivated and hard-working individual who
+                                is passionate about programming and technology.
+                                I am a quick learner and enjoy taking on new
+                                challenges. I am also a team player and enjoy
+                                collaborating with others to achieve a common
+                                goal.
                                 <br />
                                 <br />
-                                I'm a very curious person, I love to learn new
-                                things and I'm always looking for new
-                                challenges. I'm a fast learner and I'm not
-                                afraid to dive into new things.
-                                <br />
-                                <br />I also love to play video games, I'm a big
-                                fan of the Call of Duty franchise, and I also
-                                love to play GTA V, Minecraft, and many more.
+                                This is why I am the best, and you should hire
+                                me. I'm joking, but I'm still the best.
                             </div>
                         </div>
                     </div>
@@ -275,7 +200,7 @@ const HomePage = (): ReactElement => {
                         </div>
 
                         <img
-                            src='/assets/homepage/software-bg.png'
+                            src='/assets/homepage/work.svg'
                             alt='Stylized image showing friends video talking with each other on desktop and mobile.'
                         />
                     </div>

@@ -24,23 +24,39 @@ const routes: Route[] = [
     {
         title: 'Socials',
         children: [
-            { name: 'LinkedIn', link: 'https://' },
-            { name: 'GitHub', link: 'https://' },
+            { name: 'GitHub', link: 'https://github.com/mart1d4' },
+            {
+                name: 'LinkedIn',
+                link: 'https://www.linkedin.com/in/martin-danton-ba3458239/',
+            },
+            {
+                name: 'Upwork',
+                link: 'https://www.upwork.com/freelancers/~016ac4c06c7d6073ef',
+            },
             { name: 'Twitter', link: 'https://' },
-            { name: 'Upwork', link: 'https://' },
         ],
     },
     {
         title: 'Projects',
         children: [
-            { name: 'Homepage', link: 'https://homepage.mart1d4.com' },
-            { name: 'Calculator', link: 'https://calculator.mart1d4.com' },
+            { name: 'Chat App', link: 'https://chat-app.mart1d4.com' },
+            { name: 'Floppy Bot', link: 'https://floppy-bot.mart1d4.com' },
             {
                 name: 'Etch a Sketch',
                 link: 'https://etch-a-sketch.mart1d4.com',
             },
-            { name: 'Floppy Bot', link: 'https://floppy-bot.mart1d4.com' },
-            { name: 'Chat App', link: 'https://chat-app.mart1d4.com' },
+            { name: 'Homepage', link: 'https://homepage.mart1d4.com' },
+            { name: 'Calculator', link: 'https://calculator.mart1d4.com' },
+        ],
+    },
+    {
+        title: 'Thanks',
+        children: [
+            { name: 'Discord', link: 'https://discord.com' },
+            { name: 'React', link: 'https://reactjs.org' },
+            { name: 'Next.js', link: 'https://nextjs.org' },
+            { name: 'Vercel', link: 'https://vercel.com' },
+            { name: 'unDraw', link: 'https://undraw.co' },
         ],
     },
 ];
@@ -125,8 +141,6 @@ const Footer = () => {
                 </div>
 
                 <div />
-                <div />
-                <div />
 
                 {routes.map((route) => (
                     <div
@@ -138,6 +152,11 @@ const Footer = () => {
                             <a
                                 key={uuidv4()}
                                 href={child.link}
+                                target={
+                                    !child.link.includes('#')
+                                        ? '_blank'
+                                        : '_self'
+                                }
                             >
                                 {child.name}
                             </a>
@@ -154,8 +173,8 @@ const Footer = () => {
                         <a href='/'>
                             <svg
                                 xmlns='http://www.w3.org/2000/svg'
-                                width='58'
-                                height='58'
+                                width='38'
+                                height='38'
                                 viewBox='0 0 24 24'
                                 strokeWidth='1.5'
                                 stroke='hsl(227, 70%, 87%)'

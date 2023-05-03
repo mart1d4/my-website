@@ -57,7 +57,7 @@ const ContactPopout = ({
 
     return (
         <div
-            id={styles.wrapper}
+            className={styles.wrapper}
             onMouseDown={(e) => {
                 if (!popoutRef.current.contains(e.target as Node)) {
                     setShow((prev) => !prev);
