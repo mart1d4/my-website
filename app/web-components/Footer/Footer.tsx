@@ -66,7 +66,7 @@ const Footer = () => {
         <footer className={styles.footer}>
             <div>
                 <div className={styles.infoBox}>
-                    <h4>MAKE THE FUTURE</h4>
+                    <h4>Who needs a title</h4>
 
                     <Language />
 

@@ -25,6 +25,7 @@ If you encounter any issues or bugs while using the website, please report them 
 ## Roadmap
 
 - [ ] Send button in contact form actually sends the message (it currently doesn't)
+- [ ] Add different languages (French, German, Spanish)
 
 ## Contributing
 

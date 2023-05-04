@@ -16,7 +16,7 @@ const HomePage = (): ReactElement => {
                 <div className={styles.hero}>
                     <div>
                         <div className={styles.heroText}>
-                            <h1>MAKE THE FUTURE</h1>
+                            <h1>Who needs a title</h1>
                             <div>
                                 My name is Martin, and I'm studying computer
                                 science at a French University. I have a strong
@@ -147,24 +147,6 @@ const HomePage = (): ReactElement => {
                     id='myself'
                 >
                     <div>
-                        <div>
-                            <h2>
-                                My curriculum vitae is available{' '}
-                                <a
-                                    href='/assets/cv.pdf'
-                                    download
-                                >
-                                    here
-                                </a>
-                            </h2>
-
-                            <p>
-                                Joking, I don't have a CV yet. I'm still
-                                studying, so I don't have much to put on it. But
-                                I'm working on it, so it will be available soon.
-                            </p>
-                        </div>
-
                         <div className={styles.contentP}>
                             <h2>Myself</h2>
 
