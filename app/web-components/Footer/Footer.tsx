@@ -66,12 +66,12 @@ const Footer = () => {
         <footer className={styles.footer}>
             <div>
                 <div className={styles.infoBox}>
-                    <h4>Who needs a title</h4>
+                    <h4>Create tomorrow</h4>
 
                     <Language />
 
                     <div className={styles.socials}>
-                        <a href='https://twitter.com/discord'>
+                        <a href=''>
                             <svg
                                 width='24'
                                 height='24'
@@ -84,7 +84,7 @@ const Footer = () => {
                             </svg>
                         </a>
 
-                        <a href='https://www.instagram.com/discord/'>
+                        <a href=''>
                             <svg
                                 width='24'
                                 height='24'
@@ -110,7 +110,7 @@ const Footer = () => {
                             </svg>
                         </a>
 
-                        <a href='https://www.facebook.com/discord/'>
+                        <a href=''>
                             <svg
                                 width='24'
                                 height='24'
@@ -123,7 +123,7 @@ const Footer = () => {
                             </svg>
                         </a>
 
-                        <a href='https://www.youtube.com/discord/'>
+                        <a href=''>
                             <svg
                                 width='24'
                                 height='24'

@@ -16,13 +16,14 @@ const HomePage = (): ReactElement => {
                 <div className={styles.hero}>
                     <div>
                         <div className={styles.heroText}>
-                            <h1>Who needs a title</h1>
+                            <h1>Create tomorrow</h1>
                             <div>
-                                My name is Martin, and I'm studying computer
-                                science at a French University. I have a strong
-                                passion for programming, and I've been actively
-                                learning and working on various projects in my
-                                free time.
+                                Hey, I'm Martin and I'm studying computer
+                                science in a French university, with the aim to
+                                become a software engineer. I have a great
+                                passion for programming, and I have been
+                                actively learning and working on various
+                                projects in my free time.
                             </div>
                         </div>
 
@@ -93,10 +94,9 @@ const HomePage = (): ReactElement => {
 
                             <div>
                                 I am currently pursuing a bachelor's degree in
-                                computer science at a French University. I have
-                                completed coursework in programming, data
-                                structures and algorithms, database management,
-                                and software engineering.
+                                computer science. I have completed coursework in
+                                programming, data structures and algorithms,
+                                database management, and software engineering.
                             </div>
                         </div>
                     </div>

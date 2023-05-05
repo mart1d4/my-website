@@ -14,7 +14,7 @@ const NotFound = (): ReactElement => {
             }}
         >
             <img
-                src='/assets/homepage/404-error.png'
+                src='/assets/homepage/404-error.svg'
                 alt='404'
             />
 
