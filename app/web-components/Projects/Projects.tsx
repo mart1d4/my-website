@@ -24,7 +24,10 @@ async function getProjects(): Promise<ProjectsType> {
 
     for (const projectName of projectNames) {
         const project = await fetch(
-            `https://api.github.com/repos/mart1d4/${projectName}`
+            `https://api.github.com/repos/mart1d4/${projectName}`,
+            {
+                next: { revalidate: 60 },
+            }
         )
             .then((res) => res.json())
             .then((res) => {
