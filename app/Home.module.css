@@ -316,7 +316,8 @@
     }
 
     .contentGrid.workTogether > div > .contentP,
-    .contentGrid.projects > div > .contentP {
+    .contentGrid.projects > div > .contentP,
+    .contentGrid.myself > div > .contentP {
         grid-column: span 8;
         text-align: center;
     }
@@ -398,7 +399,8 @@
     }
 
     .contentGrid.workTogether > div > .contentP,
-    .contentGrid.projects > div > .contentP {
+    .contentGrid.projects > div > .contentP,
+    .contentGrid.myself > div > .contentP {
         grid-column: 2 / span 10;
         text-align: center;
     }

@@ -63,7 +63,7 @@ const HomePage = (): ReactElement => {
                 <div className={styles.contentGrid}>
                     <div>
                         <img
-                            src='/assets/homepage/programming.svg'
+                            src='/assets/homepage/skills.svg'
                             alt=''
                         />
 
@@ -105,18 +105,20 @@ const HomePage = (): ReactElement => {
                 <div className={styles.contentGrid}>
                     <div>
                         <img
-                            src='/assets/homepage/skills.svg'
+                            src='/assets/homepage/growing.svg'
                             alt=''
                         />
 
                         <div className={styles.contentP}>
-                            <h2>Yes, it's not finished yet</h2>
+                            <h2>Unleashing Potential</h2>
 
                             <div>
-                                I am still working on this website, so it's not
-                                finished yet. I'm planning to add a blog sooner
-                                or later. It is not my priority for now, but I
-                                will add it in the future.
+                                Driven by a relentless pursuit of growth and an
+                                unwavering belief in pushing boundaries, I
+                                strive to deliver innovative solutions that
+                                exceed expectations. Let's explore new
+                                frontiers, challenge limitations, and create a
+                                brighter future through my work.
                             </div>
                         </div>
                     </div>
@@ -148,7 +150,7 @@ const HomePage = (): ReactElement => {
                 >
                     <div>
                         <div className={styles.contentP}>
-                            <h2>Myself</h2>
+                            <h2>More about myself</h2>
 
                             <div>
                                 I am me, and I am proud of it. I am a

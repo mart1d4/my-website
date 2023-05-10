@@ -53,7 +53,26 @@ const ContactPopout = ({
     const [message, setMessage] = useState<string>('');
 
     const popoutRef = useRef<HTMLDivElement>(null);
-    const messageRef = useRef<HTMLInputElement>(null);
+    const messageRef = useRef<HTMLDivElement>(null);
+
+    const handleSubmit = async () => {
+        const response = await fetch('/api/email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                sender: contact,
+                content: message,
+            }),
+        });
+
+        if (response.ok) {
+            setShow((prev) => !prev);
+        } else {
+            alert('Something went wrong. Please try again later.');
+        }
+    };
 
     return (
         <div
@@ -93,13 +112,7 @@ const ContactPopout = ({
                             alert('Please enter a message');
                             return;
                         }
-                        console.log(
-                            'Contact: ',
-                            contact,
-                            '\nMessage: ',
-                            message
-                        );
-                        setShow((prev) => !prev);
+                        handleSubmit();
                     }}
                 >
                     <div>
@@ -121,8 +134,7 @@ const ContactPopout = ({
                             <div
                                 style={{
                                     height:
-                                        messageRef.current?.scrollHeight ||
-                                        '40px',
+                                        messageRef?.current?.scrollHeight || 40,
                                 }}
                             >
                                 <div
