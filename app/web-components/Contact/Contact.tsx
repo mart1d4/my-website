@@ -31,7 +31,7 @@ export const ContactButton = ({ children }: { children: ReactNode }): ReactEleme
 
         const timeout = setTimeout(() => {
             setShowTooltip({ message: '', error: false });
-        }, 10000);
+        }, 1000000);
 
         return () => clearTimeout(timeout);
     }, [showTooltip]);
@@ -76,6 +76,26 @@ export const ContactButton = ({ children }: { children: ReactNode }): ReactEleme
             </div>
 
             {showTooltip.message}
+
+            <div
+                className={styles.tooltipClose}
+                onClick={() => setShowTooltip({ message: '', error: false })}
+            >
+                <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='24'
+                    height='24'
+                    viewBox='0 0 24 24'
+                    strokeWidth='2'
+                    stroke='currentColor'
+                    fill='none'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                >
+                    <path d='M18 6l-12 12' />
+                    <path d='M6 6l12 12' />
+                </svg>
+            </div>
         </div>
     );
 
@@ -122,6 +142,8 @@ const ContactPopout = ({
     const messageRef = useRef<HTMLDivElement>(null);
 
     const handleSubmit = async () => {
+        if (loading) return;
+
         setLoading(true);
 
         const response = await fetch('/api/email', {
@@ -241,7 +263,7 @@ const ContactPopout = ({
                             type='submit'
                             className={styles.button}
                         >
-                            Send
+                            {loading ? 'Sending...' : 'Send'}
                         </button>
 
                         <button

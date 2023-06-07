@@ -236,17 +236,45 @@
     line-height: 18px;
     z-index: 1000;
     box-shadow: var(--box-shadow-medium);
+    animation: popIn 0.2s ease-in-out;
 }
 
 .tooltipError {
     background-color: var(--accent-3);
+    color: hsl(229, 20%, 17%);
 }
 
 .tooltipSuccess {
     background-color: var(--accent-1);
-    color: black;
+    color: hsl(229, 20%, 17%);
 }
 
 .tooltipIcon {
     display: flex;
+    stroke: hsl(229, 20%, 17%);
+}
+
+.tooltipClose {
+    display: flex;
+    stroke: hsl(229, 20%, 17%);
+    cursor: pointer;
+    padding: 4px;
+    box-sizing: content-box;
+    opacity: 0.85;
+}
+
+.tooltipClose:hover {
+    opacity: 1;
+}
+
+@keyframes popIn {
+    0% {
+        transform: translateX(-50%) scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
 }
