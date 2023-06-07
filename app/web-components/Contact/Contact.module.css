@@ -205,7 +205,7 @@
     background-color: var(--accent-1);
 }
 
-@media screen and (min-width: 486px) {
+@media screen and (min-width: 545px) {
     .wrapper > div {
         width: 480px;
         height: fit-content;
@@ -215,4 +215,38 @@
     .inputContainer > div {
         max-height: 40vh;
     }
+}
+
+/* Tooltip */
+
+.tooltipError,
+.tooltipSuccess {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 22px;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18px;
+    z-index: 1000;
+    box-shadow: var(--box-shadow-medium);
+}
+
+.tooltipError {
+    background-color: var(--accent-3);
+}
+
+.tooltipSuccess {
+    background-color: var(--accent-1);
+    color: black;
+}
+
+.tooltipIcon {
+    display: flex;
 }

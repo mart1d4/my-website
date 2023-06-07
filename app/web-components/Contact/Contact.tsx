@@ -12,12 +12,11 @@ import {
 } from 'react';
 import styles from './Contact.module.css';
 
-export const ContactButton = ({
-    children,
-}: {
-    children: ReactNode;
-}): ReactElement => {
+type TooltipType = { message: string; error: boolean };
+
+export const ContactButton = ({ children }: { children: ReactNode }): ReactElement => {
     const [showPopout, setShowPopout] = useState(false);
+    const [showTooltip, setShowTooltip] = useState<TooltipType>({ message: '', error: false });
 
     useEffect(() => {
         if (showPopout) {
@@ -27,6 +26,59 @@ export const ContactButton = ({
         }
     }, [showPopout]);
 
+    useEffect(() => {
+        if (showTooltip.message.length === 0) return;
+
+        const timeout = setTimeout(() => {
+            setShowTooltip({ message: '', error: false });
+        }, 10000);
+
+        return () => clearTimeout(timeout);
+    }, [showTooltip]);
+
+    const Tooltip = () => (
+        <div className={showTooltip.error ? styles.tooltipError : styles.tooltipSuccess}>
+            <div className={styles.tooltipIcon}>
+                {showTooltip.error ? (
+                    <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        width='24'
+                        height='24'
+                        viewBox='0 0 24 24'
+                        strokeWidth='2'
+                        stroke='currentColor'
+                        fill='none'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                    >
+                        <path d='M15 19h-10a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v5.5' />
+                        <path d='M3 7l9 6l9 -6' />
+                        <path d='M19 16v3' />
+                        <path d='M19 22v.01' />
+                    </svg>
+                ) : (
+                    <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        width='24'
+                        height='24'
+                        viewBox='0 0 24 24'
+                        strokeWidth='2'
+                        stroke='currentColor'
+                        fill='none'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                    >
+                        <path d='M11 19h-6a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v6' />
+                        <path d='M3 7l9 6l9 -6' />
+                        <path d='M15 19l2 2l4 -4' />
+                    </svg>
+                )}
+            </div>
+
+            {showTooltip.message}
+        </div>
+    );
+
     if (showPopout) {
         return (
             <>
@@ -34,28 +86,44 @@ export const ContactButton = ({
                     onClick: () => setShowPopout(!showPopout),
                 })}
 
-                <ContactPopout setShow={setShowPopout} />
+                <ContactPopout
+                    setShow={setShowPopout}
+                    setShowTooltip={setShowTooltip}
+                />
+
+                {showTooltip.message.length > 0 && <Tooltip />}
             </>
         );
     }
 
-    return cloneElement(children as ReactElement, {
-        onClick: () => setShowPopout(!showPopout),
-    });
+    return (
+        <>
+            {cloneElement(children as ReactElement, {
+                onClick: () => setShowPopout(!showPopout),
+            })}
+
+            {showTooltip.message.length > 0 && <Tooltip />}
+        </>
+    );
 };
 
 const ContactPopout = ({
     setShow,
+    setShowTooltip,
 }: {
     setShow: Dispatch<SetStateAction<boolean>>;
+    setShowTooltip: Dispatch<SetStateAction<TooltipType>>;
 }): ReactElement => {
     const [contact, setContact] = useState<string>('');
     const [message, setMessage] = useState<string>('');
+    const [loading, setLoading] = useState<boolean>(false);
 
     const popoutRef = useRef<HTMLDivElement>(null);
     const messageRef = useRef<HTMLDivElement>(null);
 
     const handleSubmit = async () => {
+        setLoading(true);
+
         const response = await fetch('/api/email', {
             method: 'POST',
             headers: {
@@ -68,10 +136,19 @@ const ContactPopout = ({
         });
 
         if (response.ok) {
+            setShowTooltip({
+                message: 'Email sent successfully!',
+                error: false,
+            });
             setShow((prev) => !prev);
         } else {
-            alert('Something went wrong. Please try again later.');
+            setShowTooltip({
+                message: 'Something went wrong, please try again later',
+                error: true,
+            });
         }
+
+        setLoading(false);
     };
 
     return (
@@ -87,8 +164,8 @@ const ContactPopout = ({
                 <div className={styles.header}>
                     <h1>Contact me</h1>
                     <p>
-                        Please leave your message as well as a way for me to
-                        answer you (or none if you don't want a reply)
+                        Please leave your message as well as a way for me to answer you (or none if
+                        you don't want a reply)
                     </p>
 
                     <button onClick={() => setShow((prev) => !prev)}>
@@ -133,8 +210,7 @@ const ContactPopout = ({
 
                             <div
                                 style={{
-                                    height:
-                                        messageRef?.current?.scrollHeight || 40,
+                                    height: messageRef.current?.scrollHeight || 40,
                                 }}
                             >
                                 <div
@@ -146,8 +222,7 @@ const ContactPopout = ({
                                     aria-autocomplete='list'
                                     contentEditable={'plaintext-only' as any}
                                     onInput={(e) => {
-                                        const input =
-                                            e.target as HTMLDivElement;
+                                        const input = e.target as HTMLDivElement;
                                         const text = input.innerText.toString();
                                         setMessage(text);
                                     }}
@@ -157,9 +232,7 @@ const ContactPopout = ({
 
                         <div className={styles.email}>
                             <span>Rather send an email?</span>
-                            <a href='mailto:contact@mart1d4.com'>
-                                contact@mart1d4.com
-                            </a>
+                            <a href='mailto:contact@mart1d4.com'>contact@mart1d4.com</a>
                         </div>
                     </div>
 
