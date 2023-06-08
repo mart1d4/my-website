@@ -89,8 +89,8 @@ export const EmailPage = ({ baseUrl, content, sender, buttonLink }) => (
                 backgroundImage: `url(${baseUrl}/assets/email/bg-blob.png)`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
-                backgroundColor: 'hsl(222, 74%, 74%)',
-                color: 'hsl(229, 20%, 17%)',
+                backgroundColor: '#8ca9ee',
+                color: '#232634',
                 padding: '20px',
                 fontSize: '16px',
             }}
@@ -114,7 +114,7 @@ export const EmailPage = ({ baseUrl, content, sender, buttonLink }) => (
             <Section
                 style={{
                     position: 'relative',
-                    backgroundColor: 'hsl(172, 39%, 65%)',
+                    backgroundColor: '#83c9bf',
                     padding: '20px',
                     display: 'flex',
                     flexDirection: 'column',
@@ -166,9 +166,9 @@ export const EmailPage = ({ baseUrl, content, sender, buttonLink }) => (
                     href={buttonLink || ''}
                     style={{
                         display: 'inline-block',
-                        backgroundColor: 'hsl(172, 39%, 65%)',
+                        backgroundColor: '#83c9bf',
                         borderRadius: '4px',
-                        color: 'hsl(229, 20%, 17%)',
+                        color: '#232634',
                         fontSize: '16px',
                         fontWeight: 500,
                         textDecoration: 'none',
