@@ -1,12 +1,14 @@
-import { Html } from '@react-email/html';
-import { Head } from '@react-email/head';
-import { Preview } from '@react-email/preview';
-import { Container } from '@react-email/container';
-import { Section } from '@react-email/section';
-import { Text } from '@react-email/text';
-import { Heading } from '@react-email/heading';
+import {
+    Html,
+    Head,
+    Preview,
+    Container,
+    Section,
+    Text,
+    Heading,
+    Button,
+} from '@react-email/components';
 import Font from './font';
-import { Button } from '@react-email/button';
 
 export const EmailPage = ({ baseUrl, content, sender, buttonLink }) => (
     <Html lang='en'>
@@ -124,7 +126,7 @@ export const EmailPage = ({ baseUrl, content, sender, buttonLink }) => (
                 <Heading
                     style={{
                         margin: '0',
-                        fontSize: '34px',
+                        fontSize: '30px',
                         lineHeight: '120%',
                         fontWeight: 800,
                     }}
@@ -135,7 +137,7 @@ export const EmailPage = ({ baseUrl, content, sender, buttonLink }) => (
                 <Text
                     style={{
                         margin: '24px 0',
-                        fontSize: '20px',
+                        fontSize: '16px',
                         lineHeight: '1.625',
                     }}
                 >

@@ -7,9 +7,7 @@ export async function POST(req: Request): Promise<NextResponse> {
     const { sender, content }: { sender: string; content: string } = await req.json();
 
     const getHtml = () => {
-        let senderHtml = sender || 'Not Provided';
-
-        // const baseUrl = 'http://localhost:3000';
+        const senderHtml = sender || 'Not Provided';
         const baseUrl = 'https://www.mart1d4.com';
 
         const page = (
