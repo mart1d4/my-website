@@ -6,3 +6,4 @@
 **.git
 .vercel
 .env.local
+.react-email

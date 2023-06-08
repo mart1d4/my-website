@@ -4,7 +4,7 @@
     height: 100vh;
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 999;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +20,7 @@
     border-radius: 0px;
     display: flex;
     flex-direction: column;
-    animation: popIn 0.25s ease-in-out;
+    animation: popIn2 0.25s ease-in-out;
     text-align: left;
     box-shadow: var(--box-shadow-high);
 }
@@ -275,6 +275,18 @@
 
     100% {
         transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes popIn2 {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
         opacity: 1;
     }
 }

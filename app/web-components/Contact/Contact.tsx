@@ -31,7 +31,7 @@ export const ContactButton = ({ children }: { children: ReactNode }): ReactEleme
 
         const timeout = setTimeout(() => {
             setShowTooltip({ message: '', error: false });
-        }, 1000000);
+        }, 1000 * 10);
 
         return () => clearTimeout(timeout);
     }, [showTooltip]);
@@ -140,6 +140,10 @@ const ContactPopout = ({
 
     const popoutRef = useRef<HTMLDivElement>(null);
     const messageRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        messageRef.current.focus();
+    }, []);
 
     const handleSubmit = async () => {
         if (loading) return;
