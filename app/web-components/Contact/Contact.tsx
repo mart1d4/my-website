@@ -136,19 +136,29 @@ const ContactPopout = ({
 }): ReactElement => {
     const [contact, setContact] = useState<string>('');
     const [message, setMessage] = useState<string>('');
+    const [error, setError] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
 
     const popoutRef = useRef<HTMLDivElement>(null);
+    const contactRef = useRef<HTMLInputElement>(null);
     const messageRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        messageRef.current.focus();
+        contactRef.current.focus();
     }, []);
+
+    useEffect(() => {
+        if (error.length === 0 || message.length === 0) return;
+
+        setError('');
+    }, [message]);
 
     const handleSubmit = async () => {
         if (loading) return;
 
         setLoading(true);
+
+        console.log(message);
 
         const response = await fetch('/api/email', {
             method: 'POST',
@@ -212,7 +222,7 @@ const ContactPopout = ({
                     onSubmit={(e) => {
                         e.preventDefault();
                         if (!message?.length) {
-                            alert('Please enter a message');
+                            setError('The message cannot be empty');
                             return;
                         }
                         handleSubmit();
@@ -224,6 +234,7 @@ const ContactPopout = ({
 
                             <div>
                                 <input
+                                    ref={contactRef}
                                     type='text'
                                     placeholder='Email, phone number, etc.'
                                     onChange={(e) => setContact(e.target.value)}
@@ -232,7 +243,14 @@ const ContactPopout = ({
                         </div>
 
                         <div className={styles.inputContainer}>
-                            <h2>Your message</h2>
+                            <h2>
+                                Your message
+                                {error.length ? (
+                                    <span className={styles.errorLabel}>- {error}</span>
+                                ) : (
+                                    <span className={styles.errorLabel}>*</span>
+                                )}
+                            </h2>
 
                             <div
                                 style={{
@@ -241,15 +259,52 @@ const ContactPopout = ({
                             >
                                 <div
                                     ref={messageRef}
-                                    role='textarea'
+                                    role='textbox'
                                     spellCheck='true'
-                                    autoCorrect='off'
+                                    aria-haspopup='listbox'
+                                    aria-invalid='false'
+                                    aria-label='Your message'
                                     aria-multiline='true'
+                                    aria-required='true'
                                     aria-autocomplete='list'
-                                    contentEditable={'plaintext-only' as any}
+                                    autoCorrect='off'
+                                    contentEditable='true'
                                     onInput={(e) => {
                                         const input = e.target as HTMLDivElement;
                                         const text = input.innerText.toString();
+                                        setMessage(text);
+                                    }}
+                                    onPaste={(e) => {
+                                        e.preventDefault();
+
+                                        // Get where the cursor is to insert the text at the right place
+                                        const selection = window.getSelection();
+                                        const range = selection?.getRangeAt(0);
+                                        const start = range?.startOffset;
+                                        const end = range?.endOffset;
+
+                                        // Convert HTML to plain text
+                                        const text = e.clipboardData.getData('text/plain');
+
+                                        // console.log(`start: ${start}, end: ${end}, text: ${text}`);
+
+                                        // Add text to the div at the right place
+                                        const input = e.target as HTMLDivElement;
+                                        const currentText = input.innerText.toString();
+                                        const newText =
+                                            currentText.slice(0, start) +
+                                            text +
+                                            currentText.slice(end);
+                                        input.innerText = newText;
+
+                                        // Set the cursor back to the right place
+                                        const newRange = document.createRange();
+                                        newRange.setStart(input.childNodes[0], start + text.length);
+                                        newRange.collapse(true);
+                                        selection?.removeAllRanges();
+                                        selection?.addRange(newRange);
+
+                                        // Finally, update the state
                                         setMessage(text);
                                     }}
                                 />

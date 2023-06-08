@@ -23,7 +23,10 @@ To run this project locally, follow these steps:
 If you encounter any issues or bugs while using the website, please report them in the [Issues](https://github.com/mart1d4/my-website/issues) section of this repository.
 
 -   [ ] User can tab out of the contact form and open other forms at the same time
--   [ ] Second input in contact form can't be interacted with on Firefox
+-   [x] Second input in contact form can't be interacted with on Firefox
+-   [ ] Second input in contact form doesn't work as intended when pasting text, often resulting in errors
+-   [ ] Email not showing new lines
+-   [ ] Tooltip not displaying correctly on mobile
 
 ## Roadmap
 
