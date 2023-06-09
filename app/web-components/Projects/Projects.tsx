@@ -17,30 +17,30 @@ const projectNames = [
     'homepage',
     'calculator',
     'my-website',
+    'LightCycles',
+    'FiveMenu',
 ];
 
 async function getProjects(): Promise<ProjectsType> {
     let projects: ProjectsType = [];
 
     for (const projectName of projectNames) {
-        const project = await fetch(
-            `https://api.github.com/repos/mart1d4/${projectName}`,
-            {
-                next: { revalidate: 60 },
-            }
-        )
+        const project = await fetch(`https://api.github.com/repos/mart1d4/${projectName}`, {
+            next: { revalidate: 60 },
+        })
             .then((res) => res.json())
             .then((res) => {
                 return {
                     title: res.name,
                     description: res.description,
                     created_at: res.created_at,
-                    updated_at: res.updated_at,
+                    updated_at: res.pushed_at,
                     githubLink: res.html_url,
-                    liveLink: `https://${projectName}.mart1d4.com`,
+                    liveLink: res.homepage,
                 };
             });
-        projects.push(project);
+
+        if (project.title) projects.push(project);
     }
 
     return projects;
@@ -96,13 +96,15 @@ const Projects = async (): Promise<ReactElement> => {
                             View on GitHub
                         </a>
 
-                        <a
-                            href={project?.liveLink}
-                            target='_blank'
-                            rel='noreferrer'
-                        >
-                            View live
-                        </a>
+                        {project?.liveLink && (
+                            <a
+                                href={project?.liveLink}
+                                target='_blank'
+                                rel='noreferrer'
+                            >
+                                View live
+                            </a>
+                        )}
                     </div>
                 </div>
             ))}

@@ -75,7 +75,7 @@ export const ContactButton = ({ children }: { children: ReactNode }): ReactEleme
                 )}
             </div>
 
-            {showTooltip.message}
+            <p>{showTooltip.message}</p>
 
             <div
                 className={styles.tooltipClose}
@@ -157,8 +157,6 @@ const ContactPopout = ({
         if (loading) return;
 
         setLoading(true);
-
-        console.log(message);
 
         const response = await fetch('/api/email', {
             method: 'POST',
@@ -286,7 +284,7 @@ const ContactPopout = ({
                                         // Convert HTML to plain text
                                         const text = e.clipboardData.getData('text/plain');
 
-                                        // console.log(`start: ${start}, end: ${end}, text: ${text}`);
+                                        console.log(`start: ${start}, end: ${end}, text: ${text}`);
 
                                         // Add text to the div at the right place
                                         const input = e.target as HTMLDivElement;

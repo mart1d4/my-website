@@ -152,11 +152,7 @@ const Footer = () => {
                             <a
                                 key={uuidv4()}
                                 href={child.link}
-                                target={
-                                    !child.link.includes('#')
-                                        ? '_blank'
-                                        : '_self'
-                                }
+                                target={!child.link.includes('#') ? '_blank' : '_self'}
                             >
                                 {child.name}
                             </a>

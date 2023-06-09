@@ -20,7 +20,6 @@
     border-radius: 0px;
     display: flex;
     flex-direction: column;
-    animation: popIn2 0.25s ease-in-out;
     text-align: left;
     box-shadow: var(--box-shadow-high);
 }
@@ -219,6 +218,7 @@
         width: 480px;
         height: fit-content;
         border-radius: 5px;
+        animation: popIn2 0.25s ease-in-out;
     }
 
     .inputContainer > div {
@@ -235,10 +235,12 @@
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 24px;
+    flex-wrap: nowrap;
+    line-break: anywhere;
+    gap: 12px;
     justify-content: center;
     align-items: center;
-    padding: 12px 22px;
+    padding: 12px;
     border-radius: 3px;
     font-size: 16px;
     font-weight: 500;
@@ -246,6 +248,12 @@
     z-index: 1000;
     box-shadow: var(--box-shadow-medium);
     animation: popIn 0.2s ease-in-out;
+}
+
+.tooltipError > p,
+.tooltipSuccess > p {
+    text-align: center;
+    min-width: 170px;
 }
 
 .tooltipError {
@@ -261,6 +269,7 @@
 .tooltipIcon {
     display: flex;
     stroke: hsl(229, 20%, 17%);
+    padding: 4px;
 }
 
 .tooltipClose {

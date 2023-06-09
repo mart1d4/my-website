@@ -36,8 +36,7 @@
 }
 
 .heroText > h1 {
-    font-family: 'Ginto Nord', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial,
-        sans-serif;
+    font-family: 'Ginto Nord', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: clamp(24px, 5vw, 44px);
     font-weight: 800;
     line-height: 95%;
@@ -139,10 +138,36 @@
     color: var(--foreground-1);
 }
 
+.contentGrid.myself > div > .contentP:last-child {
+    margin: 0;
+    padding-top: calc(56px + 20px);
+}
+
+.contentGrid.myself .socialsContainer {
+    display: flex;
+    align-items: center;
+    gap: 0 16px;
+}
+
+.socialsContainer > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--accent-2);
+    color: var(--background-1);
+    transition: all 0.2s ease-in-out;
+}
+
+.socialsContainer > a:hover {
+    background-color: var(--accent-1);
+}
+
 .contentGrid.workTogether > div > .contentP > h2 {
     font-size: clamp(20px, 4vw, 40px);
-    font-family: 'Ginto Nord', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial,
-        sans-serif;
+    font-family: 'Ginto Nord', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 800;
     line-height: 95%;
     text-transform: uppercase;
@@ -340,6 +365,11 @@
 
     .contentGrid.firstStep > div > button {
         width: auto;
+    }
+
+    .contentGrid.myself .socialsContainer {
+        justify-content: center;
+        margin-top: 48px;
     }
 }
 
