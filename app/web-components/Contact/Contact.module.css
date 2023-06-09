@@ -68,6 +68,10 @@
     opacity: 1;
 }
 
+.header > button svg {
+    stroke-width: 0.1;
+}
+
 .wrapper form {
     overflow: hidden;
 }

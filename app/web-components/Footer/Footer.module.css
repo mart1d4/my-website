@@ -29,8 +29,7 @@
 
 .infoBox > h4 {
     color: var(--accent-2);
-    font-family: 'Ginto Nord', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial,
-        sans-serif;
+    font-family: 'Ginto Nord', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 800;
     font-size: 32px;
     line-height: 95%;
@@ -195,6 +194,11 @@
     align-items: center;
     cursor: pointer;
     text-decoration: none;
+}
+
+.bottomFooterContent > a svg {
+    stroke-width: 1.5px;
+    color: hsl(227, 70%, 87%);
 }
 
 .bottomFooterContent > button {

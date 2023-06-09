@@ -126,3 +126,16 @@ body {
     scroll-behavior: smooth;
     font-family: 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+
+button,
+a[role='button'] {
+    user-select: none;
+}
+
+svg {
+    stroke-width: 2px;
+    stroke: currentColor;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
