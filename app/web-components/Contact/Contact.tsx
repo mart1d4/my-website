@@ -171,7 +171,7 @@ const ContactPopout = ({
 
         if (response.ok) {
             setShowTooltip({
-                message: 'Email sent successfully!',
+                message: 'Message sent successfully!',
                 error: false,
             });
             setShow((prev) => !prev);
